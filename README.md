@@ -22,21 +22,19 @@
             
             
             
-            /**设置获取验证码按钮的读秒显示*/
-- (NSAttributedString *)setSecurityCodeButtonTextWithSecond:(NSInteger)sec
-{
-    NSString *string = [NSString stringWithFormat:@"重新获取 %zdS",sec];
-    NSMutableAttributedString *attribute = [[NSMutableAttributedString alloc] initWithString:string];
-    NSDictionary *dic1 = @{NSForegroundColorAttributeName: RGBAColor(255, 255, 255, 0.5)};
-    NSDictionary *dic2 = @{NSForegroundColorAttributeName: RGBColor(255, 255, 255)};
-    NSDictionary *fontDic = @{NSFontAttributeName: [UIFont sx_systemFontWithSize:12.f]};
-    [attribute addAttributes:dic1 range:NSMakeRange(0, 4)];
-    NSUInteger length = [NSString stringWithFormat:@"%zdS",sec].length;
-    [attribute addAttributes:dic2 range:NSMakeRange(5, length)];
-    [attribute addAttributes:fontDic range:NSMakeRange(0, string.length)];
-    return attribute;
-    
-}
+          - (NSAttributedString *)setSecurityCodeButtonTextWithSecond:(NSInteger)sec
+      {
+            NSString *string = [NSString stringWithFormat:@"重新获取 %zdS",sec];
+            NSMutableAttributedString *attribute = [[NSMutableAttributedString alloc] initWithString:string];
+            NSDictionary *dic1 = @{NSForegroundColorAttributeName: RGBAColor(255, 255, 255, 0.5)};
+            NSDictionary *dic2 = @{NSForegroundColorAttributeName: RGBColor(255, 255, 255)};
+            NSDictionary *fontDic = @{NSFontAttributeName: [UIFont sx_systemFontWithSize:12.f]};
+            [attribute addAttributes:dic1 range:NSMakeRange(0, 4)];
+            NSUInteger length = [NSString stringWithFormat:@"%zdS",sec].length;
+            [attribute addAttributes:dic2 range:NSMakeRange(5, length)];
+            [attribute addAttributes:fontDic range:NSMakeRange(0, string.length)];
+           return attribute;
+    }
 
 
 
@@ -44,7 +42,7 @@
 
 
 
-[weakSelf.securityCodeBtn tbw_starTimerWithTotalSecond:60 isSaveTimerStateWithCacheKey:@"timer"];
+       [weakSelf.securityCodeBtn tbw_starTimerWithTotalSecond:60 isSaveTimerStateWithCacheKey:@"timer"];
 
 
 
@@ -52,7 +50,7 @@
 
 
 
-[self.securityCodeBtn tbw_keepTheTimerStateWhenTheLastTimeisNotComplete:60 cacheKey:@"timer"];
+       [self.securityCodeBtn tbw_keepTheTimerStateWhenTheLastTimeisNotComplete:60 cacheKey:@"timer"];
 
 
 
