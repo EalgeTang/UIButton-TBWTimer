@@ -4,11 +4,11 @@
 如果只是需要一般的计时功能 可以如下例所示
 
 
-
+```
 
 [self.securityCodeBtn tbw_starTimerWithTotalSecond:60 isSaveTimerStateWithCacheKey:nil];
 
-
+```
 
 
 
